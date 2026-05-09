@@ -1,12 +1,10 @@
-# ML Compute Node
+# ML research
 
-I built an ML platform with realtime training visualization, distributed job queueing and edge inference on a Raspberry Pi to mirror and learn from the infrastructure behind Tesla Autopilot research.
+I built an ML platform with real-time training visualization, distributed job queueing and edge inference on a Raspberry Pi to mirror and learn from the infrastructure behind Tesla Autopilot research.
 
 
 ## Demo
-[Scaling Training Experiments with Live Metrics - Watch Video
-
-]
+[![ML research platform demo](https://cdn.loom.com/sessions/thumbnails/bbd4d9dfebd84249b64aa3b144fe6d29-ad7e588d755b3cbc-full-play.gif)](https://www.loom.com/share/bbd4d9dfebd84249b64aa3b144fe6d29)
 
 ## What it does
 - Trains a neural net on my computer using PyTorch with hyperparameters tracked through a REST API and saved in a PostgreSQL db
