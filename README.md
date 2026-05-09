@@ -14,6 +14,7 @@ I built an ML platform with real-time training visualization, distributed job qu
 - Reports telemetry data, IMU sensor data and inference latency back to the dashboard in realtime
   
 
+
 ## Stack
 For the frontend (dashboard UI), NextJS and Typescript was used. Typescript’s type checking was essential to ensure there was no type mismatch across the ui. Recharts is the charting library. Redux toolkit and socketio-client were also used.
 
@@ -36,7 +37,8 @@ npm run dev
 ```
 ### Pi inference:
 ```
-# SSH into the pi. Transfer the scripts in the pi folder to your pi
+# SSH into the pi
+cd inference
 python3 infer.py
 python3 imu.py
 ```
