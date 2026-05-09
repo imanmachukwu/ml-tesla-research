@@ -1,0 +1,43 @@
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: mlplatform
+      POSTGRES_USER: mluser
+      POSTGRES_PASSWORD: mlpassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
+  flask:
+    build: .
+    ports:
+      - "5050:5050"
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      DB_HOST: postgres
+      REDIS_HOST: redis
+
+  worker:
+    build: .
+    command: python worker.py
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      DB_HOST: postgres
+      REDIS_HOST: redis
+      FLASK_HOST: flask
+    volumes:
+      - ./models:/app/models
+
+volumes:
+  pg_data:

@@ -1,0 +1,14 @@
+flask
+flask-socketio
+flask-cors
+eventlet
+psycopg2-binary
+redis
+rq
+torch --index-url https://download.pytorch.org/whl/cpu
+torchvision --index-url https://download.pytorch.org/whl/cpu
+requests
+numpy<2
+gunicorn
+gevent
+gevent-websocket

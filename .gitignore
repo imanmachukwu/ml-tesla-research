@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+venv/
+__pycache__/
+*.pyc
+
+# Environment
+.env
+
+# Build output
+.next/
+build/
+dist/
+
+# Data and models
+backend/data/
+backend/models/
+*.pt
+*.pth
+
+# Docker volumes
+pg_data/
+
+# OS
+.DS_Store
