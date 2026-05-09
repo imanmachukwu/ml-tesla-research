@@ -2,8 +2,11 @@
 
 I built an ML platform with realtime training visualization, distributed job queueing and edge inference on a Raspberry Pi to mirror and learn from the infrastructure behind Tesla Autopilot research.
 
+
 ## Demo
-[<div style="position: relative; padding-bottom: 62.57242178447277%; height: 0;"><iframe src="https://www.loom.com/embed/bbd4d9dfebd84249b64aa3b144fe6d29" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>]
+[Scaling Training Experiments with Live Metrics - Watch Video
+
+]
 
 ## What it does
 - Trains a neural net on my computer using PyTorch with hyperparameters tracked through a REST API and saved in a PostgreSQL db
@@ -11,6 +14,7 @@ I built an ML platform with realtime training visualization, distributed job que
 - Streams live training metrics to a Nextjs dashboard using websockets. Loss and accuracy metrics for each epoch are sent
 - Deploys a trained model to a Raspberry Pi 5 for edge inference on a real camera input
 - Reports telemetry data, IMU sensor data and inference latency back to the dashboard in realtime
+  
 
 ## Stack
 For the frontend (dashboard UI), NextJS and Typescript was used. Typescript’s type checking was essential to ensure there was no type mismatch across the ui. Recharts is the charting library. Redux toolkit and socketio-client were also used.
@@ -18,6 +22,7 @@ For the frontend (dashboard UI), NextJS and Typescript was used. Typescript’s 
 In the backend, I had Flask running the core with multiple API endpoints defined. Flask-SocketIO for the websocket. Python to write all the scripts and PostgreSQL to store data. I implemented foreign key integrity and JSONB hyperparameters to store abstract but queryable data. Redis and RQ were used too.
 
 For the ml itself, PyTorch is the go-to. The platform currently has uses the CNN architecture to improve model accuracy. Torchvision was used. For the infra, docker is used to house the backend with each service running its own container. Hardware includes a Raspberry Pi 5, Pi Camera 3 and MPU-6050 sensor as the major components.
+
 
 ## Setup
 ### Backend:
@@ -40,6 +45,7 @@ python3 imu.py
 ```
 
 Submitting a training job involves running a curl command with the hyperparameters you want, or using a script to conduct a hyperparameter sweep.
+
 
 ## Example curl commands
 ### Create the experiments
