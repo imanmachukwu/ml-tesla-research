@@ -37,8 +37,7 @@ npm run dev
 ```
 ### Pi inference:
 ```
-# SSH into the pi
-cd inference
+# SSH into the pi. Transfer the scripts in the pi folder to your pi and run them there
 python3 infer.py
 python3 imu.py
 ```
